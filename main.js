@@ -1,5 +1,5 @@
 const input = document.querySelector('input');
-const cardContainer = document.querySelector('.card-container'); 
+const cardContainer = document.querySelector('.card-container');
 
 async function getData() {
     let value = input.value || 'fire';
@@ -7,41 +7,43 @@ async function getData() {
     const res = await fetch(url);
     const data = await res.json();
     console.log(data['Search']);
+    cardContainer.innerHTML = '';
     data['Search'].forEach(element => {
-        createCard(element); 
+        createCard(element);
     });
-   
+
 }
 
 const showData = (data) => {
-  
+
 }
 
 const createCard = (data) => {
-   const figure = document.createElement('figure');
 
-   const img = document.createElement('img');
-   img.classList.add('poster');
-   img.src = data.Poster;
+    const figure = document.createElement('figure');
 
-   const figcaption = document.createElement('figcaption');
-   figcaption.classList.add('card-info');
+    const img = document.createElement('img');
+    img.classList.add('poster');
+    img.src = data.Poster;
 
-   const span = document.createElement('span');
-   span.classList.add('title');
-   span.textContent = data.Title;
+    const figcaption = document.createElement('figcaption');
+    figcaption.classList.add('card-info');
 
-   const span2 = document.createElement('span');
-   span2.classList.add('year');
-   span2.textContent = data.Year;
+    const span = document.createElement('span');
+    span.classList.add('title');
+    span.textContent = data.Title;
 
-   figcaption.append(span);
-   figcaption.append(span2);
+    const span2 = document.createElement('span');
+    span2.classList.add('year');
+    span2.textContent = data.Year;
 
-   figure.append(img);
-   figure.append(figcaption);
+    figcaption.append(span);
+    figcaption.append(span2);
 
-   cardContainer.append(figure);
+    figure.append(img);
+    figure.append(figcaption);
+
+    cardContainer.append(figure);
 }
 
 document.addEventListener('keypress', (e) => {
