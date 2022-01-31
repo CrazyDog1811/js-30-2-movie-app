@@ -10,13 +10,25 @@ body {
 }
 
 header>.container {
-  justify-content: end;
+  justify-content: space-between;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: aqua;
 }
 
 input {
     padding: 5px;
     border-radius: 10px;
     border: none;
+    background-color: aqua;
+    color: rgb(252, 11, 63);
+    font-size: 1.2em;
+}
+
+input:focus {
+    outline: 2px solid rgb(212, 247, 12);
 }
 
 .container {
@@ -82,13 +94,25 @@ figure{
     }
 }
 
+@media screen and (max-width: 850px) {
+header>.container {
+    flex-direction: column;
+    gap: 10px;
+}
+}
+
 @media screen and (max-width: 760px) {
     main>.container {
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 585px) {
+
+    h1 {
+        font-size: 1.5em;
+    }
+
     main>.container {
         display: flex;
         flex-direction: column;
@@ -100,5 +124,17 @@ figure{
 
     .poster {
         max-height: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 1em;
     }
 }

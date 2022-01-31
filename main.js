@@ -52,3 +52,4 @@ document.addEventListener('keypress', (e) => {
         getData();
     }
 });
+document.addEventListener('DOMContentLoaded', getData);
