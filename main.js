@@ -3,7 +3,7 @@ const cardContainer = document.querySelector('.card-container');
 
 async function getData() {
     let value = input.value || 'fire';
-    const url = `http://www.omdbapi.com/?apikey=e5646aba&s=${value}`;
+    const url = `https://www.omdbapi.com/?apikey=e5646aba&s=${value}`;
     try {
         const res = await fetch(url);
         const data = await res.json();
